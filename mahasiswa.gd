@@ -31,14 +31,14 @@ func _physics_process(delta: float):
 
 	# 4. Logika Animasi
 	if not is_on_floor():
-		# Asumsi Anda membuat animasi bernama 'jump'
+		# Panggil animasi lompat
 		animated_sprite.play("jump") 
 	elif direction != 0:
-		# Panggil animasi lari: "run_1"
-		animated_sprite.play("run_1") 
+		# Panggil animasi lari: "run"
+		animated_sprite.play("run") 
 	else:
-		# Panggil animasi diam: "idle"
-		animated_sprite.play("idle")
+		# Panggil animasi diam: "idle_1" (Ganti dengan nama idle utama Anda)
+		animated_sprite.play("idle_1")
 		
 	# 5. Pindahkan dan Deteksi Kolisi
 	move_and_slide()
