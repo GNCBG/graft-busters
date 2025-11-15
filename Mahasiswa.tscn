@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnpil260ufee0"]
+[gd_scene load_steps=11 format=3 uid="uid://bnpil260ufee0"]
 
-[ext_resource type="Script" uid="uid://erf26yvjlbq3" path="res://tikus.gd" id="1_nel4d"]
+[ext_resource type="Script" uid="uid://7bqpb75lkjj0" path="res://mahasiswa.gd" id="1_vh7tl"]
 [ext_resource type="Texture2D" uid="uid://c0sm162daxqpl" path="res://assets/player/mahasiswa.png" id="2_mnnkr"]
 [ext_resource type="Texture2D" uid="uid://c8d4m4cbg856n" path="res://assets/player/tikus.png" id="2_vh7tl"]
 
@@ -58,8 +58,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(548.25, 696)
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_nel4d")
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_vh7tl"]
+properties/0/path = NodePath(".:velocity")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:position")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:animation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath("AnimatedSprite2D:flip_h")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[node name="Mahasiswa" type="CharacterBody2D"]
+script = ExtResource("1_vh7tl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(12.999996, -247.99998)
@@ -75,3 +89,7 @@ shape = SubResource("RectangleShape2D_0rwas")
 position = Vector2(-2, -255)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_vh7tl")

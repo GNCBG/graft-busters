@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3eni4h1rtnyl"]
+[gd_scene load_steps=8 format=3 uid="uid://b3eni4h1rtnyl"]
 
 [ext_resource type="Script" uid="uid://erf26yvjlbq3" path="res://tikus.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c8d4m4cbg856n" path="res://assets/player/tikus.png" id="1_xhfnw"]
@@ -26,12 +26,36 @@ animations = [{
 "texture": SubResource("AtlasTexture_kne1u")
 }],
 "loop": true,
-"name": &"run",
+"name": &"run_1",
 "speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"run_3",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
 size = Vector2(548.25, 696)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rhry5"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Tikus" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
@@ -39,7 +63,7 @@ script = ExtResource("1_kpjcp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -281)
 sprite_frames = SubResource("SpriteFrames_e80uo")
-animation = &"run"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -352)
@@ -49,3 +73,7 @@ shape = SubResource("RectangleShape2D_0rwas")
 position = Vector2(-2, -255)
 zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_interval = 0.1
+replication_config = SubResource("SceneReplicationConfig_rhry5")
