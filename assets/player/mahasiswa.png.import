@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0yl4xhwev046"
-path="res://.godot/imported/floor_tile.png-3975132e876e75918a1f380b81a27be2.ctex"
+uid="uid://c0sm162daxqpl"
+path="res://.godot/imported/mahasiswa.png-d897e4344d3d4b2f9156e2e0d975f91f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilesets/floor_tile.png"
-dest_files=["res://.godot/imported/floor_tile.png-3975132e876e75918a1f380b81a27be2.ctex"]
+source_file="res://assets/player/mahasiswa.png"
+dest_files=["res://.godot/imported/mahasiswa.png-d897e4344d3d4b2f9156e2e0d975f91f.ctex"]
 
 [params]
 

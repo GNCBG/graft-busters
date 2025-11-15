@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3eni4h1rtnyl"]
 
-[ext_resource type="Script" uid="uid://erf26yvjlbq3" path="res://player.gd" id="1_kpjcp"]
+[ext_resource type="Script" uid="uid://erf26yvjlbq3" path="res://tikus.gd" id="1_kpjcp"]
 [ext_resource type="Texture2D" uid="uid://c8d4m4cbg856n" path="res://assets/player/tikus.png" id="1_xhfnw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kpjcp"]
@@ -31,14 +31,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
-size = Vector2(32, 64)
+size = Vector2(548.25, 696)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Tikus" type="CharacterBody2D"]
 script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -281)
 sprite_frames = SubResource("SpriteFrames_e80uo")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -352)
 shape = SubResource("RectangleShape2D_0rwas")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -255)
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
