@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnpil260ufee0"]
+[gd_scene load_steps=10 format=3 uid="uid://bnpil260ufee0"]
 
 [ext_resource type="Script" uid="uid://7bqpb75lkjj0" path="res://mahasiswa.gd" id="1_vh7tl"]
 [ext_resource type="Texture2D" uid="uid://c0sm162daxqpl" path="res://assets/player/mahasiswa.png" id="2_mnnkr"]
-[ext_resource type="Texture2D" uid="uid://c8d4m4cbg856n" path="res://assets/player/tikus.png" id="2_vh7tl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_834up"]
 atlas = ExtResource("2_mnnkr")
@@ -16,9 +15,9 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("2_mnnkr")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kne1u"]
-atlas = ExtResource("2_vh7tl")
-region = Rect2(698, 0, 698, 556)
+[sub_resource type="AtlasTexture" id="AtlasTexture_nel4d"]
+atlas = ExtResource("2_mnnkr")
+region = Rect2(0, 64, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e80uo"]
 animations = [{
@@ -48,7 +47,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kne1u")
+"texture": SubResource("AtlasTexture_nel4d")
 }],
 "loop": true,
 "name": &"run",
@@ -79,7 +78,7 @@ script = ExtResource("1_vh7tl")
 position = Vector2(12.999996, -247.99998)
 scale = Vector2(7.9062505, 7.7187505)
 sprite_frames = SubResource("SpriteFrames_e80uo")
-animation = &"idle_3"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -352)

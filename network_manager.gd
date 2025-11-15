@@ -31,7 +31,7 @@ func create_host():
 	Multiplayer.multiplayer_peer = peer
 	print("Server started on port ", PORT)
 	start_game_button.disabled = false
-	host_button.disabled = true
+	host_button.disabled = true 
 	join_button.disabled = true
 
 func join_game():
@@ -71,3 +71,5 @@ func _on_join_button_pressed():
 
 func _on_start_game_button_pressed():
 	start_game()
+
+
