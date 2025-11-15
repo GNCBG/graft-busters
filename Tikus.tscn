@@ -41,7 +41,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0rwas"]
-size = Vector2(548.25, 696)
+size = Vector2(446, 490)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rhry5"]
 properties/0/path = NodePath(".:position")
@@ -58,15 +58,16 @@ properties/3/spawn = true
 properties/3/replication_mode = 1
 
 [node name="Tikus" type="CharacterBody2D"]
+position = Vector2(-15, 73)
 script = ExtResource("1_kpjcp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -281)
 sprite_frames = SubResource("SpriteFrames_e80uo")
-animation = &"idle"
+animation = &"run_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2, -352)
+position = Vector2(8, -249)
 shape = SubResource("RectangleShape2D_0rwas")
 
 [node name="Camera2D" type="Camera2D" parent="."]

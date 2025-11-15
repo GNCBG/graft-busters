@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Graft Busters"
-run/main_scene="uid://qmgn0b3s5ovr"
+run/main_scene="uid://cj50uci44slph"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
